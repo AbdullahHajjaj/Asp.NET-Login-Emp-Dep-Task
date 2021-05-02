@@ -1,0 +1,75 @@
+﻿@model EmpDepTask.Models.Employee
+
+<br />
+<h2 class="text-info"> @(Model.id != 0 ? "Edit" : "Create") Employee </h2>
+
+<br />
+
+<div class="border container" style="padding:30px;">
+    <form method="post">
+        @if (Model.id != 0)
+        {
+            <input type="hidden" asp-for="id" />}
+        <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="Name"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="EmpNum">Employee Number</label>
+            </div>
+            <div class="col-6">
+                <input asp-for="EmpNum" class="form-control" />
+                <span asp-validation-for="EmpNum" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="Email"></label>
+            </div>
+            <div class="col-6">
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="PhoneNumber">Phone Number</label>
+            </div>
+            <div class="col-6">
+                <input asp-for="PhoneNumber" class="form-control" />
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-3">
+                <label asp-for="DepId">Department ID</label>
+            </div>
+            <div class="col-6">
+                <input asp-for="DepId" class="form-control" />
+                <span asp-validation-for="DepId" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-3 offset-3">
+                <button type="submit" class="btn btn-primary form-control">
+                    @(Model.id != 0 ? "Update" : "Create")
+                </button>
+            </div>
+            <div class="col-3">
+                <a asp-action="Index" class="btn btn-success form-control">Back to List</a>
+            </div>
+        </div>
+    </form>
+</div>
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}
+
