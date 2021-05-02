@@ -2,7 +2,9 @@
 
 
   *To Configure the Connection with the Database 
+  
     	*we should change the server name in "appsettings.json" file.
+	
     	*The Server name I used: localhost;
     
   *In This Project I made Two Databases:
